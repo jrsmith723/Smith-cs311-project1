@@ -29,3 +29,22 @@ python verify_project1.py         # full check, including thread-safety -- run t
 4. Full `python verify_project1.py` transcript, including invariant and contention checks, and Success Token
 5. Complexity justification for `get`, `put`, and eviction
 6. Any modified `simulate_hitrate.py` and `test_lru.py`
+
+## Hit-Rate Evidence
+Capacity | Hit Rate
+---------|---------
+5        |16.16%
+10       |31.57%
+20       |56.77%
+50       |81.08%
+100      |83.37%
+
+The larger cache retained more recently used entries, which reduced evictions and allowed for more requests to be served.
+
+## Time Complexity
+1. get(key): O(1) average - Dictionary lookup and list update.
+2. put(key, value): O(1) average - Dictionary lookup and list insertion/update.
+3. Eviction: O(1) average - Directly remove the least-recently-used node and its map entry.
+
+## SUCCESS TOKEN
+Q1MzMTF8UFJPSkVDVDF8anJzbWl0aDh8UEFTU3wwNWU3YTczNTE4YzBhMzhk
